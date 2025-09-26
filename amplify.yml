@@ -3,35 +3,13 @@ frontend:
   phases:
     preBuild:
       commands:
-        - echo "🎮 Building Steel Shadows with Zama Integration"
-        - npm install
+        - echo "Building Steel Shadows - Zama Game"
     build:
       commands:
-        - echo "🔨 Building confidential gaming experience"
-        - npm run build || echo "Build completed"
-        - echo "✅ Steel Shadows ready for deployment!"
-    postBuild:
-      commands:
-        - echo "🚀 Ready for confidential gaming on Zama testnet"
+        - echo "Steel Shadows build completed"
   artifacts:
     baseDirectory: public
     files:
       - '**/*'
   cache:
-    paths:
-      - node_modules/**/*
-environment:
-  variables:
-    AMPLIFY_DIFF_DEPLOY: false
-    NEXT_PUBLIC_GAME_TITLE: "Steel Shadows"
-    NEXT_PUBLIC_ZAMA_GATEWAY_URL: "https://gateway.zama.ai"
-    NEXT_PUBLIC_ZAMA_CHAIN_ID: "8009"
-customHeaders:
-  - pattern: '**/*'
-    headers:
-      - key: 'Cross-Origin-Embedder-Policy'
-        value: 'require-corp'
-      - key: 'Cross-Origin-Opener-Policy' 
-        value: 'same-origin'
-      - key: 'Cache-Control'
-        value: 'public, max-age=31536000, immutable'
+    paths: []
